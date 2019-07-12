@@ -1,26 +1,13 @@
 package heros.finanzas.config;
 
-import nz.net.ultraq.web.thymeleaf.LayoutDialect;
 
 import javax.annotation.Resource;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.JpaVendorAdapter;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.orm.jpa.vendor.Database;
-import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+//import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -28,7 +15,7 @@ import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ServletContextTemplateResolver;
 
-import com.jolbox.bonecp.BoneCPDataSource;
+import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 /**
  * 
@@ -37,7 +24,7 @@ import com.jolbox.bonecp.BoneCPDataSource;
  */
 @Configuration
 @ComponentScan(value="heros.finanzas.*")
-@EnableTransactionManagement(proxyTargetClass=true)
+//@EnableTransactionManagement(proxyTargetClass=true)
 @EnableWebMvc
 public class AplicationContext extends WebMvcConfigurerAdapter{
 	
