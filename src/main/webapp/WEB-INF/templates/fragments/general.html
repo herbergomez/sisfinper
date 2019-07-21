@@ -1,103 +1,42 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns="http://www.w3.org/1999/xhtml">
-	
-<head th:fragment="headerFragment">
-<title>Sistema para el Monitoreo de Finanzas Personales (SISFINPER)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-<link rel="icon" type="image/png" th:href="@{/resources/images/SIC232.png}"/>
-
-	<link media="all" th:href="@{/resources/libs/qTip2/css/jquery.qtip.css}" rel="stylesheet"/>
-	<link media="all" th:href="@{/resources/css/bootstrap.css}" rel="stylesheet"/>
-	<link media="all" th:href="@{/resources/css/custom.css}" rel="stylesheet"/>
-	<link media="all" th:href="@{/resources/libs/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
-	<link media="all" th:href="@{/resources/libs/datatables/css/jquery.dataTables.css}" rel="stylesheet"/>
-	<link media="all" th:href="@{/resources/libs/datatables/css/dataTables.bootstrap.css}" rel="stylesheet"/>
-	<link media="all" th:href="@{/resources/libs/datatables/css/dataTables.responsive.css}" rel="stylesheet"/>
-	
-	<link media="all" th:href="@{/resources/libs/jquery-print/css/PrintArea.css}" />
-	<link rel="stylesheet" th:href="@{/resources/libs/jquery-ui/css/jquery-ui-timepicker-addon.css}" />
-	<link rel="stylesheet" th:href="@{/resources/libs/jquery-ui/css/jquery-ui.css}" />
-	<link rel="stylesheet" th:href="@{/resources/libs/jquery-ui/css/jquery.ui.datepicker.min.css}" />
-	<link media="all" th:href="@{/resources/libs/jBox/css/jBox.css}" rel="stylesheet"/>
-	
-</head>
-
-<body>
-<nav th:fragment="navFragment" role="navigation" class="navbar navbar-inverse">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="#" class="navbar-brand">SISFINPER</a>
-        </div>
-        
-        <div id="navbarCollapse" class="collapse navbar-collapse">
-        <!-- Menu para admin -->
-            <ul class="nav navbar-nav" >
-                <li >
-                	<a th:href="@{/}">Home</a>
-                </li>
-                <li >
-                	<a th:href="@{/admin/usuarios}"><i class="fa fa-wheelchair"></i>Usuarios</a>
-                </li>
-                <li >
-                	<a th:href="@{/admin/finanzas}"><i class="fa fa-users"></i>Finanzas</a> 
-                </li>
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+  
+    <div th:replace="fragments/header :: header">
+      <!-- ============================================================================ -->
+      <!-- This content is only used for static prototyping purposes (natural templates)-->
+      <!-- and is therefore entirely optional, as this markup fragment will be included -->
+      <!-- from "fragments/header.html" at runtime.                                     -->
+      <!-- ============================================================================ -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Static header</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
             </ul>
+          </div>
         </div>
-        
-        
-</nav>
-
-<footer th:fragment="footerFragment">
-
-<div class="container-fluid footer">
-	<div class="row footer">
-		<div class="col-md-4 text-left">
-		<div id="footer" class="span12" style="padding: 5px;">
-		<!--  2014 &copy; MINSAL -->
-		</div>
-		</div>
-		<div class="col-md-4 text-center" style="padding-top: 1%;">
-			<b>SISTEMA PARA EL MONITOREO DE FINANZAS PERSONALES (SISFINPER)</b>
-		</div>
-		<div class="col-md-4 text-right visible-lg-inline" style="padding-top: 22px; padding-right: 7%;">
-			<ul class="list-inline">
-          		<li><i class="icon-facebook icon-2x"></i></li>
-          		<li><i class="icon-twitter icon-2x"></i></li>
-          		<li><i class="icon-google-plus icon-2x"></i></li>
-          		<li><i class="icon-pinterest icon-2x"></i></li>
-        	</ul>
-		</div>
-	</div>	
-</div>
-
-</footer>
-
-		
-<div th:fragment="jsFragment">
-
-	<script type="text/javascript" th:src="@{/resources/js/jquery-1.11.1.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/js/bootstrap.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/datatables/js/jquery.dataTables.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/datatables/js/dataTables.bootstrap.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/datatables/js/jquery.dataTables.responsive.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/jquery-ui.custom.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jquery-validate/jquery.validate.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jquery-validate/additional.methods.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/qTip2/js/jquery.qtip.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jquery-print/js/jquery.PrintArea.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/jquery.ui.datepicker.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/jquery-ui-timepicker-addon.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/datetimepickerSet.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/js/general.js}"></script>
-	<script type="text/javascript" th:src="@{/resources/libs/jBox/js/jBox.js}"></script>
-</div>
-
-</body>
+      </div>
+    </div>
+    <div class="container">
+      <div class="hero-unit">
+        <h1>Test</h1>
+        <p>
+          Welcome to the Spring MVC Quickstart application!
+          Get started quickly by signing up.
+        </p>
+        <p>
+          <a href="/signup" th:href="@{/signup}" class="btn btn-large btn-success">Sign up</a>
+        </p>
+      </div>
+      <div th:replace="fragments/footer :: footer">&copy; 2016 The Static Templates</div>
+    </div>
+    ...
+  </body>
 </html>
