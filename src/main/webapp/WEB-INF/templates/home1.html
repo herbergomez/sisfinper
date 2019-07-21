@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+<head th:include="fragments/general :: headerFragment">
+	
+</head>
+<body>
+	<div th:replace="fragments/general :: navFragment"></div>	
+	<div class="container" style="min-height: 600px; overflow: auto;">
+    	<div class="row">
+			<div class="col-md-12 col-xs-12">
+				<button class="btn btn-primary" th:text="#{admin.finanzas.agregarIngreso}"
+					data-toggle="modal" data-target="#modalAgregarIngreso">
+				</button>
+			</div>
+		</div>
+		
+		<div class="col-md-12 col-xs-12">
+				<div th:if="${success}" class="alert alert-info alert-dismissible" role="alert">
+  					<button type="button" class="close" data-dismiss="alert">
+  						<span aria-hidden="true">&times;</span>
+  						<span class="sr-only">Close</span>
+  					</button>
+  					<strong th:utext="#{general.alerta.atencion}"></strong>
+  					<p th:utext="#{admin.finanzas.ingreso.exito}"></p>
+				</div>
+				
+				<div class="row">
+		  <div class="col-md-12">
+		     <div class="widget-box">
+		  	   <div class="widget-title">
+					<span class="icon">
+						<i class="fa fa-administracion"></i>
+					</span>
+					<h5 th:utext="#{admin.finanzas.administracion}"></h5>
+				</div>
+				<div class="widget-content">
+					 <table id="tblPaciente" class="table table-hover table-striped table-bordered datatables">
+					     <thead>
+								<tr class="head">
+									<th th:text="#{admin.finanzas.ingreso}"></th>
+									<th th:text="#{admin.finanzas.saldoactual}"></th>	
+								</tr>	
+							</thead>
+							<tbody>
+							
+							</tbody>
+					   </table>
+					</div>
+		   	</div>	
+		  </div>
+		</div>
+	</div>
+		<div class="modal fade"  id="modalAgregarIngreso" tabindex="-1" role="dialog" aria-labelledby="modalAgregarIngreso" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<form>
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" style="font-style: normal;color: blue;" th:text="#{admin.finanzas.addmodal.titulo}"></h4>
+					</div>
+					<div class="modal-body" style="width:400px important; heigth:400px important;">
+						<div class="form-group">
+							<label for="ingreso" th:utext="#{admin.finanzas.ingreso}"></label>
+				  			<input id="ingreso" type="text"/>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" th:text="#{general.btn.cancelar}"></button>
+        				<button type="submit" class="btn btn-primary" th:text="#{general.btn.guardar}"></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div th:replace="fragments/general :: footerFragment"></div>
+	<div th:replace="fragments/general :: jsFragment"></div>
+</body>
+</html>

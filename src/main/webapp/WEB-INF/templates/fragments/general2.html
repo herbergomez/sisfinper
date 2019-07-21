@@ -1,0 +1,327 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+	
+<head th:fragment="headerFragment">
+<title>Sistema para el Monitoreo de Finanzas (SISFIN)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+
+	
+	<link rel="stylesheet" th:href="@{/resources/bootstrap/4.1.3/css/bootstrap.min.css} "/>
+	
+	<link media="all" th:href="@{/resources/datatables/1.10.19/media/css/jquery.dataTables.min.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/datatables/1.10.19/media/css/dataTables.bootstrap.min.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/datatables-responsive/2.0.1/css/responsive.bootstrap.scss}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/datatables-responsive/2.0.1/css/responsive.dataTables.scss}" rel="stylesheet"/>
+	<link rel="stylesheet" th:href="@{/resources/jquery-ui/1.12.1/jquery-ui.min.css}" />
+	
+	<!--<link media="all" th:href="@{/static/css/disenio.css}" rel="stylesheet"/>-->
+	
+	<!--<link media="all" th:href="@{/static/css/disenio.css}" rel="stylesheet"/>-->
+	
+	<link media="all" th:href="@{/static/css/style2.css}" rel="stylesheet"/>
+	<!-- <link media="all" th:href="@{/static/css/custom.css}" rel="stylesheet"/>-->
+	
+	<!-- 
+	<link media="all" th:href="@{/resources/libs/qTip2/css/jquery.qtip.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/css/bootstrap.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/css/custom.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/libs/font-awesome/css/font-awesome.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/libs/datatables/css/jquery.dataTables.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/libs/datatables/css/dataTables.bootstrap.css}" rel="stylesheet"/>
+	<link media="all" th:href="@{/resources/libs/datatables/css/dataTables.responsive.css}" rel="stylesheet"/>
+	
+	<link media="all" th:href="@{/resources/libs/jquery-print/css/PrintArea.css}" />
+	<link rel="stylesheet" th:href="@{/resources/libs/jquery-ui/css/jquery-ui-timepicker-addon.css}" />
+	<link rel="stylesheet" th:href="@{/resources/libs/jquery-ui/css/jquery-ui.css}" />
+	<link rel="stylesheet" th:href="@{/resources/libs/jquery-ui/css/jquery.ui.datepicker.min.css}" />
+	<link media="all" th:href="@{/resources/libs/jBox/css/jBox.css}" rel="stylesheet"/>
+	-->
+</head>
+
+<body>
+
+<nav th:fragment="navFragment1" class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link">Left Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link">Left Link 2</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link">Right Link 1</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">            Dropdown on Right</a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action with a lot of text inside of an item</a>
+      </div>
+    </li> 	
+  </ul>
+</nav>
+
+
+<nav th:fragment="navFragment" role="navigation" class="navbar navbar-expand-lg navbar-dark bg-primary rounded">
+ <a class="navbar-brand" href="#">Navbar</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+			<ul class="nav navbar-nav" >
+                <li >
+                	<a class="navbar-brand" th:href="@{/}">Home</a>
+                </li>
+                <li >
+                	<a class="navbar-brand" th:href="@{/admin/usuarios}"><i class="fa fa-wheelchair"></i>Usuarios</a>
+                </li>
+                <li >
+                	<a class="navbar-brand" th:href="@{/admin/finanzas}"><i class="fa fa-users"></i>Finanzas</a> 
+                </li>
+            </ul>
+	    <form class="form-inline">
+	      <div class="md-form my-0">
+	        <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search"/>
+	      </div>
+	    </form>
+  </div>
+  <!--
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">SISFINPER</a>
+        </div>
+        
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav" >
+                <li >
+                	<a th:href="@{/}">Home</a>
+                </li>
+                <li >
+                	<a th:href="@{/admin/usuarios}"><i class="fa fa-wheelchair"></i>Usuarios</a>
+                </li>
+                <li >
+                	<a th:href="@{/admin/finanzas}"><i class="fa fa-users"></i>Finanzas</a> 
+                </li>
+            </ul>
+        </div>-->
+</nav>
+
+
+<footer th:fragment="footerFragment">
+
+	<div class="container-fluid footer">
+		<div class="row footer">
+			<div class="col-md-4 text-left">
+			<div id="footer" class="span12" style="padding: 5px;">
+			<!--  2014 &copy; MINSAL -->
+			</div>
+			</div>
+			<div class="col-md-4 text-center" style="padding-top: 1%;">
+				<b>SISTEMA PARA EL MONITOREO DE FINANZAS PERSONALES (SISFINPER)</b>
+			</div>
+			<div class="col-md-4 text-right visible-lg-inline" style="padding-top: 22px; padding-right: 7%;">
+				<ul class="list-inline">
+	          		<li><i class="icon-facebook icon-2x"></i></li>
+	          		<li><i class="icon-twitter icon-2x"></i></li>
+	          		<li><i class="icon-google-plus icon-2x"></i></li>
+	          		<li><i class="icon-pinterest icon-2x"></i></li>
+	        	</ul>
+			</div>
+		</div>	
+	</div>
+</footer>
+
+		
+<div th:fragment="jsFragment">
+	<script type="text/javascript" th:src="@{/resources/popper.js/1.14.3/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/jquery/3.3.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/bootstrap/4.1.3/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/jquery/3.3.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/bootstrap/4.1.3/js/bootstrap.min.js}"></script>
+	
+	 <!-- Font Awesome JS -->
+	<script type="text/javascript" th:src="@{/resources/font-awesome/5.9.0/js/solid.min.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/font-awesome/5.9.0/js/fontawesome.min.js}"></script>
+	
+	
+	<!-- <script type="text/javascript" th:src="@{/resources/malihu-custom-scrollbar-plugin/3.0.8/jquery.mCustomScrollbar.concat.min.js}"></script>
+	-->
+	  
+
+	
+	<script type="text/javascript" th:src="@{/resources/datatables/1.10.19/media/js/jquery.dataTables.min.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/datatables/1.10.19/media/js/dataTables.bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/datatables-responsive/2.0.1/js/dataTables.responsive.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/datatables-responsive/2.0.1/js/responsive.bootstrap.js}"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function () {
+	        $('#sidebarCollapse').on('click', function () {
+	            $('#sidebar').toggleClass('active');
+	            $(this).toggleClass('active');
+	        });
+	    });
+    </script>
+	
+	<!-- <script type="text/javascript" th:src="@{/static/js/general.js}"></script>-->
+	
+	<!-- 
+	<script type="text/javascript" th:src="@{/resources/js/jquery-1.11.1.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/bootstrap.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/datatables/js/jquery.dataTables.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/datatables/js/dataTables.bootstrap.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/datatables/js/jquery.dataTables.responsive.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/jquery-ui.custom.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jquery-validate/jquery.validate.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jquery-validate/additional.methods.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/qTip2/js/jquery.qtip.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jquery-print/js/jquery.PrintArea.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/jquery.ui.datepicker.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/jquery-ui-timepicker-addon.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jquery-ui/js/datetimepickerSet.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/js/general.js}"></script>
+	<script type="text/javascript" th:src="@{/resources/libs/jBox/js/jBox.js}"></script>
+	-->
+</div>
+<!--
+<nav th:fragment="navFragment2" id="sidebar">
+	<button type="button" id="sidebarCollapseDescktop" class="btn btn-link navbar-btn">
+	    <span class="sr-only">Desplegar menu</span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	</button>
+	<button type="button" id="sidebarCollapse" class="btn btn-link navbar-btn">
+	    <span class="sr-only">Desplegar menu</span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	</button>
+	<div class="sidebar-body">
+		<form id="frmMenu" class="frmMenu">
+			<ul class="sidebar-nav" id="menu" draggable="true">
+              <li >
+              	<a  th:href="@{/}">Home</a>
+              </li>
+              <li >
+              	<a  th:href="@{/admin/usuarios}"><i class="fa fa-wheelchair"></i>Usuarios</a>
+              </li>
+              <li >
+              	<a th:href="@{/admin/finanzas}"><i class="fa fa-users"></i>Finanzas</a> 
+              </li>
+          </ul>
+		</form>
+		
+	</div>
+</nav>
+-->
+
+<nav th:fragment="navMenus" id="sidebar" class="navbar-dark bg-dark">
+			<div class="sidebar-header">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+	              <i class="fas fa-align-left"></i>
+	          </button>
+	          <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	              <i class="fas fa-align-justify"></i>
+	          </button>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#inicio">
+                        <i class="fas fa-home"></i>
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="#catalogos" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
+                        Catalogos
+                    </a>
+                    <ul class="collapse list-unstyled" id="catalogos">
+                        <li>
+                            <a href="#">Clientes</a>
+                        </li>
+                        <li>
+                            <a href="#">Proveedores</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Dropdown
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+			          <a class="dropdown-item" href="#">Action</a>
+			          <a class="dropdown-item" href="#">Another action</a>
+			          <div class="dropdown-divider"></div>
+			          <a class="dropdown-item" href="#">Something else here</a>
+			        </div>
+			      </li>
+                
+            </ul>
+</nav>
+
+<nav th:fragment="navDatosSistema"  class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li>
+                	<a href="#" id="session_user" >
+                		<i class="fa fa-user-md"></i>
+                		<!--<span th:text="${#httpServletRequest.remoteUser}"></span>-->
+                		<span>HERBER GOMEZ</span>
+                	</a>
+                </li>
+               <!-- <li>
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-cog"></i>
+						<span>Opciones</span>
+					</a>
+					<ul class="dropdown-menu">
+  						<li><a href="#" data-toggle="modal" data-target="#modalCambioClave"><i class="fa fa-lock"></i> Cambiar contrase&ntilde;a</a></li>
+  						
+  						<li th:if="${#httpServletRequest.isUserInRole('ROLE_Admin')}" >
+  							<a th:href="@{/admin/manualAdministracion}">
+  								<i class="fa fa-ambulance"></i> Ayuda al usuario
+  							</a>
+  						</li>
+  						<li th:if="${#httpServletRequest.isUserInRole('ROLE_Medico')}" >
+  							<a th:href="@{/control/manualControlCitas}">
+  								<i class="fa fa-ambulance"></i> Ayuda al usuario
+  							</a>
+  						</li>
+  						<li th:if="${#httpServletRequest.isUserInRole('ROLE_Farmacia')} or ${#httpServletRequest.isUserInRole('ROLE_Admin_Farmacia')}" >
+  							<a th:href="@{/farm/entregaMed/manualEntregaMedicamentos}">
+  								<i class="fa fa-ambulance"></i> Ayuda al usuario
+  							</a>
+  						</li>
+  						
+  					</ul>
+				</li>	-->
+                <li>
+                	<a th:href="@{/logout}">
+						<i class="fa fa-sign-out"></i>
+						<span>Cerrar sesi&oacute;n</span>
+					</a>
+				</li>
+			</ul>
+          </div>
+      </div>
+</nav>
+
+</body>
+</html>
